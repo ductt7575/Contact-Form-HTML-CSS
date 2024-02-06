@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Embed fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/e8472d7152.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="background: #c6c6c6">
+    <main>
+        <section class="contact">
+            <div class="container">
+                <h2 class="contact__heading">Contact Us</h2>
+                <p class="contact__desc">Any question or remarks? Just write us a message!</p>
+                <!-- Contact body -->
+                <div class="contact-body">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h3 class="contact-info__heading">Contact Information</h3>
+                        <p class="contact-info__desc">
+                            Fill up the form and our Team will get back to you within 24
+                            hours.
+                        </p>
+                        <div class="contact-info__row">
+                            <i class="fa-solid fa-phone contact-info__icon"></i>
+                            <p class="contact-info__personal">+0123 45678910</p>
+                        </div>
+                        <div class="contact-info__row">
+                            <i class="fa-solid fa-envelope contact-info__icon"></i>
+                            <p class="contact-info__personal">hello@flowbase.com</p>
+                        </div>
+                        <div class="contact-info__row">
+                            <i class="fa-solid fa-location-dot contact-info__icon"></i>
+                            <p class="contact-info__personal">102 Street 2714 Don</p>
+                        </div>
+                        <div class="social">
+                            <a href="#!" class="social__link"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#!" class="social__link"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#!" class="social__link"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#!" class="social__link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div class="contact__form">
+                        <form method="post" action="https://api-gateway.fullstack.edu.vn/action_page.php"
+                            autocomplete="off">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="first-name">First Name</label>
+                                    <input class="form-input" type="text" name="first-name" id="first-name"
+                                        placeholder="Enter your first name" required minlength="2" />
+                                    <p class="form-error">Please enter at least 2 characters.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="last-name">Last Name</label>
+                                    <input class="form-input" type="text" name="last-name" id="last-name"
+                                        placeholder="Enter your last name" required minlength="2" />
+                                    <p class="form-error">Please enter at least 2 characters.</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Mail</label>
+                                    <input class="form-input" type="email" name="email" id="email"
+                                        placeholder="Enter your email" required
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                                    <p class="form-error">Please enter a valid email format.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone</label>
+                                    <input class="form-input" type="tel" name="phone" id="phone"
+                                        placeholder="Enter your phone" required
+                                        pattern="^(0|\+?84)(3|5|7|8|9)[0-9]{8}$" />
+                                    <p class="form-error">Please enter a valid phone number.</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="" class="form-label large">What the of website do you need?</label>
+
+                                    <div class="radio-group">
+                                        <div class="radio-btn">
+                                            <input type="radio" name="needed-skills" id="web-design" value="Web Design"
+                                                required checked />
+                                            <label class="radio-btn__label" for="web-design">Web Design</label>
+                                        </div>
+                                        <div class="radio-btn">
+                                            <input type="radio" name="needed-skills" id="web-development" required />
+                                            <label class="radio-btn__label" for="web-development">Web
+                                                Development</label>
+                                        </div>
+                                        <div class="radio-btn">
+
+                                            <input type="radio" name="needed-skills" id="logo-design" required />
+                                            <label class="radio-btn__label" for="logo-design">Logo Design</label>
+                                        </div>
+                                        <div class="radio-btn">
+                                            <input type="radio" name="needed-skills" id="other" required />
+                                            <label class="radio-btn__label" for="other">Other</label>
+                                        </div>
+                                    </div>
+                                    <p class="form-error">Please select this field.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message</label>
+                                <textarea class="form-textarea" name="message" id="message"
+                                    placeholder="Write your message..." oninput="onResize(this)" required
+                                    minlength="10"></textarea>
+                                <p class="form-error">Please enter at least 10 characters.</p>
+                            </div>
+                            <button type="submit" class="contact-form__btn">Send Message</button>
+                    </div>
+                    </form>
+                </div>
+        </section>
+    </main>
+    <script>
+        function onResize(e) {
+            e.style.height = 'auto';
+            e.style.height = e.scrollHeight + 3 + 'px';
+        }
+    </script>
+</body>
+
+</html>
